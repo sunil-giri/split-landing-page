@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  background-image: url("https://images.unsplash.com/photo-1623786159887-8a747d692e8b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHBzNXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  right: 0;
+  background-image: url("https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8eGJveHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.left::before {
+  content: "";
+}
+
+.right::before {
+  content: "";
+}
+
+h1 {
+  color: #fff;
+  font-family: "Mulish", sans-serif;
+}
+
+.left .btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: skyblue;
+  color: #fff;
+  font-family: "Mulish", sans-serif;
+  cursor: pointer;
+}
+
+.right .btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: lightgreen;
+  color: #fff;
+  font-family: "Mulish", sans-serif;
+  cursor: pointer;
+}
+
+.container.left-active .left {
+  width: 75%;
+}
+
+.container.left-active .right {
+  width: 25%;
+}
+
+.container.right-active .right {
+  width: 75%;
+}
+
+.container.right-active .left {
+  width: 25%;
+}
+
+.right,
+.left {
+  transition: all 1s ease;
+}
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .btn {
+    padding: 0.5rem;
+  }
+}
